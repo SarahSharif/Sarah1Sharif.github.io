@@ -7,7 +7,7 @@
     display: block;
     width: 28px;
     height: 30px;
-    margin: 30px auto 10px;
+    margin: 30px auto;
     padding-left: 83%;
 }
 
@@ -17,7 +17,6 @@
     position: absolute;
     left: 0;
     top: -9px;
-
 }
 
 #mainMenu #toggle span:after {
@@ -64,7 +63,7 @@
     width: 200px;
     padding: 10px;
     margin: auto;
-    font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+    font-family: 'Nobile Medium', 'Arial Narrow', serif;
     text-align: center;
     border-radius: 40px;
     background: white;
@@ -72,6 +71,7 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity .4s;
+    overflow: hidden;
 }
 
 #mainMenu #menu:after {
@@ -83,6 +83,7 @@
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     border-bottom: 20px solid white;
+    overflow: hidden;
 }
 
 #mainMenu ul, li, li a {
@@ -107,10 +108,12 @@
 }
 
 #topbar {
-    background-color: #191919;
+
+    margin-top: 10px;
     margin: 0px;
     padding: 0px;
     width: 100%;
+    margin-bottom: -215px;
 
 }
 
@@ -118,20 +121,140 @@ body {
     background-color: #191919 !important;
 }
 
+.title {
+    height: 10vh;
+}
 
-@media(min-width:768px) {
-    section {
-        padding: 150px 0;
+.intro {
+    display: flex;
+    height: 75vh;
+    background: #fff;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 5vh;
+}
+
+.content {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 992px) {
+    .content {
+        width: 85%;
     }
 }
 
-
-.img-valign {
-    vertical-align: middle;
-    margin-bottom: 0.75em;
+.left {
+    flex: 1 1 auto;
 }
 
-.text2 {
-    font-size: 24px;
-    float: right;
+img {
+    border: 1px solid #26A65B;
+    width: 430px;
+    height: 400px;
+    margin: 0.0em;
+    margin-right: 1.5em;
+    left: 100px;
+}
+
+h1 {
+    padding: .6em 1.2em;
+}
+
+h2 {
+    animation: type 2s steps(60, end);
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 10px 0 0 10px;
+    color: #26A65B;
+    width: 10em;
+    font-family: "Nobile Medium", "Arial Narrow", sans-serif;
+}
+
+@keyframes type{
+    from { width: 0; }
+}
+
+h1 > span {
+    color: #26A65B;
+}
+
+.text {
+    flex: 3 1 auto;
+    border-left: 3px solid #26A65B;
+    padding: 1.2em;
+    height: 50vh;
+    max-width: 60%;
+    font-size: 1.1em;
+    line-height: 26px;
+    overflow-y: scroll;
+}
+
+.text > h2 {
+    color: #26A65B;
+    padding-bottom: .8em;
+}
+
+.text a {
+    color: #26A65B;
+}
+
+.social {
+    height: 10vh;
+    background-color: #26A65B;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.social > a {
+    text-decoration: none;
+    color: #fff;
+    flex: 1;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social > span {
+    display: inline-block;
+    color: #fff;
+}
+
+p {
+    font-family: "Open Sans thin", sans-serif;
+}
+
+.social > a:hover,
+.social > a:active {
+    background-color: #6c6753;
+}
+
+@media screen and (max-width: 600px) {
+    .intro {
+        overflow: hidden;
+        /*padding-top: 5vh;*/
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+    }
+    .left,
+    .text {
+        display: block;
+        overflow: initial;
+    }
+    .left {
+        padding: 1.2em;
+    }
+    .text {
+        max-width: 80%;
+        height: 20vh;
+    }
 }
